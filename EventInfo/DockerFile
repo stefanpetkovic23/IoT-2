@@ -1,0 +1,13 @@
+FROM node:alpine
+
+WORKDIR /usr/src/app
+
+COPY ./EventInfo/package.json ./EventInfo/package-lock.json ./
+
+RUN npm install
+
+COPY ./EventInfo .
+
+EXPOSE 3000
+
+CMD ["node", "index.js"]
